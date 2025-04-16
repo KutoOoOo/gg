@@ -140,7 +140,7 @@ namespace g
                     }
                 }
             }
-            guna2HtmlLabel1.Text = $"Календарно-тематический план по дисциплине ? преподователь {comboBox1.Text}";
+            guna2HtmlLabel1.Text = $"Календарно-тематический план по дисциплине {comboBox2.Text} преподователь {comboBox1.Text}";
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
