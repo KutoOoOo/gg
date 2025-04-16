@@ -93,12 +93,14 @@
             // 
             // toolStripStatusLabel2
             // 
+            toolStripStatusLabel2.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripStatusLabel2.ForeColor = SystemColors.ButtonFace;
-            toolStripStatusLabel2.Margin = new Padding(400, 3, 0, 2);
+            toolStripStatusLabel2.Margin = new Padding(435, 3, 0, 2);
             toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             toolStripStatusLabel2.RightToLeft = RightToLeft.No;
-            toolStripStatusLabel2.Size = new Size(79, 17);
+            toolStripStatusLabel2.Size = new Size(79, 15);
             toolStripStatusLabel2.Text = "Дата и время";
+            toolStripStatusLabel2.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label3
             // 

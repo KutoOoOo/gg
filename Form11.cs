@@ -25,13 +25,16 @@ namespace g
             using (MySqlConnection conn = new MySqlConnection(podcl.str()))
             {
                 conn.Open();
-                cmd = new MySqlCommand("SELECT Group_id , Name AS Название FROM `Groups`", conn);
+                cmd = new MySqlCommand("SELECT Group_id, g.Name, s.Name, s.Qualification " +
+                    "FROM `Groups` g " +
+                    "LEFT JOIN `Specialization` s ON g.`Specialization_id`= s.`Specialization_id`", conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 guna2DataGridView1.DataSource = dataTable;
                 guna2DataGridView1.Columns[0].Visible = false;
-                conn.Close();
+                guna2DataGridView1.Columns[2].Visible = false;
+                guna2DataGridView1.Columns[3].Visible = false;
             }
         }
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -118,6 +121,18 @@ namespace g
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2DataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idrow = guna2DataGridView1.CurrentRow.Index;
+            guna2TextBox3.Text = Convert.ToString(guna2DataGridView1.Rows[idrow].Cells[2].Value);
+            guna2TextBox2.Text = Convert.ToString(guna2DataGridView1.Rows[idrow].Cells[3].Value);
         }
     }
 }

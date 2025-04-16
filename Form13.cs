@@ -67,7 +67,7 @@ namespace g
                         }
                     }
                     cmd = new MySqlCommand("INSERT INTO `Lessons`(`Prepodov_id`, `Lessons_id`, `Date`,`StartTime`,`TimeEnding`,`Group_id`,`Vid_Zanit`,`LessonTopic`,`Homework`) " +
-                       $"VALUES (@prepod,NULL,'{form.guna2DateTimePicker1.Value.ToString("yyyy-MM-dd")}','{form.guna2TextBox2.Text}','{form.guna2TextBox1.Text}',@group,'{form.comboBox4.Text}','{form.guna2TextBox3.Text}','{form.listBox1.Text}')", conn);
+                       $"VALUES (@prepod,NULL,'{form.guna2DateTimePicker1.Value.ToString("yyyy-MM-dd")}','{form.guna2TextBox2.Text}','{form.guna2TextBox1.Text}',@group,'{form.comboBox4.Text}','{form.guna2TextBox3.Text}','{form.textBox1.Text}')", conn);
                     cmd.Parameters.AddWithValue("@prepod",p);
                     cmd.Parameters.AddWithValue("@group",g);
                      cmd.ExecuteNonQuery();
@@ -83,19 +83,41 @@ namespace g
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
         {
+            int p = -1, g = -1;
             Form4 form = new Form4();
             form.Text = "Редактирование занятия";
             int idrow = guna2DataGridView1.CurrentRow.Index;
             int idStud = Convert.ToInt32(guna2DataGridView1.Rows[idrow].Cells[0].Value);
             form.guna2TextBox1.Text = Convert.ToString(guna2DataGridView1.Rows[idrow].Cells[1].Value);
+          
             if (form.ShowDialog() == DialogResult.OK)
             {
                 using (MySqlConnection conn = new MySqlConnection(podcl.str()))
                 {
                     conn.Open();
-                    //       cmd = new MySqlCommand("UPDATE `Teacher` SET " +
-                    //   $"`FIO`='{form.textBox1.Text}',`Doljn`='{form.textBox2.Text}'," +
-                    //    $"`Email`='{form.textBox3.Text}',`Phone`='{form.textBox4.Text}' WHERE Prepodov_id = '{idStud}'", conn);
+                    cmd = new MySqlCommand($"SELECT Prepodov_id FROM `Teacher` WHERE FIO = '{form.comboBox1.Text}'", conn);
+                    using (var read = cmd.ExecuteReader())
+                    {
+                        if (read.Read())
+                        {
+                            p = Convert.ToInt32(read["Prepodov_id"].ToString());
+                        }
+                    }
+                    cmd = new MySqlCommand($"SELECT Group_id FROM `Groups` WHERE Name = '{form.comboBox3.Text}'", conn);
+                    using (var read = cmd.ExecuteReader())
+                    {
+                        if (read.Read())
+                        {
+                            g = Convert.ToInt32(read["Group_id"].ToString());
+                        }
+                    }
+                    cmd = new MySqlCommand($"UPDATE `Lessons` SET @prepod," +
+                        $"NULL,`Date`='{form.guna2DateTimePicker1.Value.ToString("yyyy-MM-dd")}',`StartTime`='{form.guna2TextBox2.Text}'," +
+                        $"`TimeEnding`='{form.guna2TextBox1.Text}',@group,`Vid_Zanit`='{form.comboBox4.Text}'," +
+                        $"`LessonTopic`='{form.guna2TextBox3.Text}',`Homework`='{form.textBox1.Text}' " +
+                        $"WHERE Lessons_id = '{idStud}'", conn);
+                    cmd.Parameters.AddWithValue("@prepod", p);
+                    cmd.Parameters.AddWithValue("@group", g);
                     cmd.ExecuteNonQuery();
                 }
             }

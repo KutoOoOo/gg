@@ -19,7 +19,20 @@ namespace g
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Введите название спциальности");
+                return;
+            }
+            else
+                 if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Введите квалификацию специальности");
+                return;
+            }
+            else
+                DialogResult = DialogResult.OK;
         }
 
         private void guna2CircleButton5_Click(object sender, EventArgs e)

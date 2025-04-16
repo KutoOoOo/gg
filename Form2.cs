@@ -149,7 +149,7 @@ namespace g
             {
                 conn.Open();
                 cmd = new MySqlCommand("SELECT Lessons_id AS '№\nп/п',Date,LessonTopic,Vid_Zanit,Homework FROM `Lessons` " +
-                    $"WHERE Prepodov_id = (SELECT Prepodov_id FROM Teacher WHERE FIO = '{comboBox1.Text}')", conn);
+                    $"WHERE Prepodov_id = (SELECT Prepodov_id FROM Teacher WHERE FIO = '{comboBox1.Text}') ", conn);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -165,9 +165,11 @@ namespace g
                 conn.Open();
                 comboBox2.Items.Clear();
                 comboBox2.Text = "";
-                cmd = new MySqlCommand("SELECT d.`name` FROM `Disciplines` d JOIN `Year` y ON d.`Discipline_id` = y.`Discipline_id` JOIN `Teacher` p ON y.`Prepodov_id`" +
-                        $"WHERE p.`FIO` = '{comboBox1.Text}'" +
-                        $" AND y.`year` = '{comboBox3.Text}'", conn);
+                cmd = new MySqlCommand("SELECT Name FROM Disciplines " +
+                    "WHERE Discipline_id IN " +
+                    "(SELECT Discipline_id FROM Year WHERE Prepodov_id = " +
+                    $"(SELECT Prepodov_id FROM Teacher WHERE FIO = '{comboBox1.Text}') " +
+                    $"AND year = '{comboBox3.Text}')", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())

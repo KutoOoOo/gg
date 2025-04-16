@@ -48,10 +48,10 @@
             guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
             label2 = new Label();
+            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -209,45 +209,9 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DataGridView1.CellClick += guna2DataGridView1_CellClick;
             guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
-            // 
-            // guna2TextBox2
-            // 
-            guna2TextBox2.CustomizableEdges = customizableEdges7;
-            guna2TextBox2.DefaultText = "";
-            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Font = new Font("Segoe UI", 9F);
-            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(343, 85);
-            guna2TextBox2.Name = "guna2TextBox2";
-            guna2TextBox2.PlaceholderText = "";
-            guna2TextBox2.SelectedText = "";
-            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2TextBox2.Size = new Size(166, 42);
-            guna2TextBox2.TabIndex = 11;
-            // 
-            // guna2TextBox3
-            // 
-            guna2TextBox3.CustomizableEdges = customizableEdges9;
-            guna2TextBox3.DefaultText = "";
-            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Font = new Font("Segoe UI", 9F);
-            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox3.Location = new Point(343, 150);
-            guna2TextBox3.Name = "guna2TextBox3";
-            guna2TextBox3.PlaceholderText = "";
-            guna2TextBox3.SelectedText = "";
-            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2TextBox3.Size = new Size(166, 62);
-            guna2TextBox3.TabIndex = 12;
+            guna2DataGridView1.CellMouseClick += guna2DataGridView1_CellMouseClick;
             // 
             // label1
             // 
@@ -255,9 +219,9 @@
             label1.ForeColor = Color.FromArgb(224, 224, 224);
             label1.Location = new Point(354, 67);
             label1.Name = "label1";
-            label1.Size = new Size(59, 15);
+            label1.Size = new Size(146, 15);
             label1.TabIndex = 13;
-            label1.Text = "Название";
+            label1.Text = "Название специальности";
             // 
             // label2
             // 
@@ -269,6 +233,54 @@
             label2.TabIndex = 14;
             label2.Text = "Специальность";
             // 
+            // guna2TextBox2
+            // 
+            guna2TextBox2.BackColor = Color.FromArgb(64, 64, 64);
+            guna2TextBox2.BorderRadius = 5;
+            guna2TextBox2.CustomizableEdges = customizableEdges7;
+            guna2TextBox2.DefaultText = "";
+            guna2TextBox2.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox2.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox2.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox2.FillColor = Color.Gray;
+            guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox2.Font = new Font("Segoe UI", 9F);
+            guna2TextBox2.ForeColor = Color.FromArgb(64, 64, 64);
+            guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox2.Location = new Point(343, 150);
+            guna2TextBox2.Name = "guna2TextBox2";
+            guna2TextBox2.PlaceholderText = "";
+            guna2TextBox2.ReadOnly = true;
+            guna2TextBox2.SelectedText = "";
+            guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2TextBox2.Size = new Size(166, 44);
+            guna2TextBox2.TabIndex = 26;
+            // 
+            // guna2TextBox3
+            // 
+            guna2TextBox3.BackColor = Color.FromArgb(64, 64, 64);
+            guna2TextBox3.BorderRadius = 5;
+            guna2TextBox3.CustomizableEdges = customizableEdges9;
+            guna2TextBox3.DefaultText = "";
+            guna2TextBox3.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            guna2TextBox3.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            guna2TextBox3.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            guna2TextBox3.FillColor = Color.Gray;
+            guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox3.Font = new Font("Segoe UI", 9F);
+            guna2TextBox3.ForeColor = Color.FromArgb(64, 64, 64);
+            guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            guna2TextBox3.Location = new Point(343, 85);
+            guna2TextBox3.Name = "guna2TextBox3";
+            guna2TextBox3.PlaceholderText = "";
+            guna2TextBox3.ReadOnly = true;
+            guna2TextBox3.SelectedText = "";
+            guna2TextBox3.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2TextBox3.Size = new Size(166, 44);
+            guna2TextBox3.TabIndex = 26;
+            // 
             // Form11
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -276,10 +288,10 @@
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(521, 341);
             ControlBox = false;
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(guna2TextBox3);
             Controls.Add(guna2TextBox2);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(guna2CircleButton4);
             Controls.Add(guna2CircleButton3);
             Controls.Add(guna2CircleButton2);
@@ -301,9 +313,9 @@
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private Label label1;
         private Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,12 @@ namespace g
 {
     public partial class Form9 : Form
     {
+        Podcl podcl = new Podcl();
+        MySqlCommand cmd;
         public Form9()
         {
             InitializeComponent();
             guna2ComboBox1.DropDownStyle =ComboBoxStyle.DropDownList;
-            
         }
 
         private void guna2CircleButton4_Click(object sender, EventArgs e)
@@ -31,7 +33,10 @@ namespace g
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
         {
-
+            using (MySqlConnection conn = new MySqlConnection(podcl.str()))
+            {
+                conn.Open();
+            }
         }
 
         private void guna2CircleButton2_Click(object sender, EventArgs e)
@@ -40,7 +45,10 @@ namespace g
             form.Text = "Редактирования пользователя";
             if (form.ShowDialog() == DialogResult.OK)
             {
-
+                using(MySqlConnection conn =  new MySqlConnection(podcl.str()))
+                {
+                    conn.Open();
+                }
             }
         }
 
@@ -50,7 +58,10 @@ namespace g
             form.Text = "Добавление пользователя";
             if (form.ShowDialog() == DialogResult.OK)
             {
-
+                using (MySqlConnection conn = new MySqlConnection(podcl.str()))
+                {
+                    conn.Open();
+                }
             }
         }
 

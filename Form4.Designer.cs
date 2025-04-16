@@ -54,9 +54,9 @@
             guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            listBox1 = new ListBox();
             guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2CircleButton5 = new Guna.UI2.WinForms.Guna2CircleButton();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // guna2TextBox1
@@ -69,24 +69,26 @@
             guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox1.Font = new Font("Segoe UI", 9F);
+            guna2TextBox1.ForeColor = Color.Black;
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(12, 200);
+            guna2TextBox1.Location = new Point(48, 191);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PlaceholderText = "";
             guna2TextBox1.SelectedText = "";
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2TextBox1.Size = new Size(123, 23);
             guna2TextBox1.TabIndex = 0;
+            guna2TextBox1.KeyPress += guna2TextBox1_KeyPress;
             // 
             // comboBox1
             // 
             comboBox1.BackColor = Color.White;
+            comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(10, 25);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(176, 23);
             comboBox1.TabIndex = 1;
-            comboBox1.Text = "Преподователи";
             // 
             // guna2HtmlLabel1
             // 
@@ -105,6 +107,7 @@
             guna2DateTimePicker1.CustomizableEdges = customizableEdges3;
             guna2DateTimePicker1.FillColor = Color.White;
             guna2DateTimePicker1.Font = new Font("Segoe UI", 9F);
+            guna2DateTimePicker1.ForeColor = Color.Black;
             guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
             guna2DateTimePicker1.Location = new Point(10, 75);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -135,20 +138,22 @@
             guna2TextBox2.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox2.Font = new Font("Segoe UI", 9F);
+            guna2TextBox2.ForeColor = Color.Black;
             guna2TextBox2.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox2.Location = new Point(12, 144);
+            guna2TextBox2.Location = new Point(48, 135);
             guna2TextBox2.Name = "guna2TextBox2";
             guna2TextBox2.PlaceholderText = "";
             guna2TextBox2.SelectedText = "";
             guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2TextBox2.Size = new Size(123, 23);
             guna2TextBox2.TabIndex = 6;
+            guna2TextBox2.KeyPress += guna2TextBox2_KeyPress;
             // 
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.ForeColor = SystemColors.ButtonFace;
-            guna2HtmlLabel3.Location = new Point(17, 121);
+            guna2HtmlLabel3.Location = new Point(69, 117);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(80, 17);
             guna2HtmlLabel3.TabIndex = 7;
@@ -158,7 +163,7 @@
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.ForeColor = SystemColors.ButtonFace;
-            guna2HtmlLabel4.Location = new Point(12, 177);
+            guna2HtmlLabel4.Location = new Point(58, 168);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(101, 17);
             guna2HtmlLabel4.TabIndex = 7;
@@ -166,12 +171,12 @@
             // 
             // comboBox3
             // 
+            comboBox3.ForeColor = Color.Black;
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(238, 25);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(176, 23);
             comboBox3.TabIndex = 10;
-            comboBox3.Text = "Выберите группу";
             // 
             // guna2HtmlLabel5
             // 
@@ -185,6 +190,7 @@
             // 
             // comboBox4
             // 
+            comboBox4.ForeColor = Color.Black;
             comboBox4.FormattingEnabled = true;
             comboBox4.Location = new Point(238, 77);
             comboBox4.Name = "comboBox4";
@@ -211,6 +217,7 @@
             guna2TextBox3.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox3.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox3.Font = new Font("Segoe UI", 9F);
+            guna2TextBox3.ForeColor = Color.Black;
             guna2TextBox3.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox3.Location = new Point(238, 129);
             guna2TextBox3.Name = "guna2TextBox3";
@@ -239,15 +246,6 @@
             guna2HtmlLabel8.Size = new Size(109, 17);
             guna2HtmlLabel8.TabIndex = 3;
             guna2HtmlLabel8.Text = "Домашнее задание";
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(238, 191);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(176, 94);
-            listBox1.TabIndex = 13;
             // 
             // guna2CircleButton3
             // 
@@ -291,6 +289,14 @@
             guna2CircleButton5.TabIndex = 24;
             guna2CircleButton5.Click += guna2CircleButton5_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(238, 191);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(176, 94);
+            textBox1.TabIndex = 25;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -298,9 +304,9 @@
             BackColor = Color.FromArgb(64, 64, 64);
             ClientSize = new Size(422, 329);
             ControlBox = false;
+            Controls.Add(textBox1);
             Controls.Add(guna2CircleButton5);
             Controls.Add(guna2CircleButton3);
-            Controls.Add(listBox1);
             Controls.Add(guna2TextBox3);
             Controls.Add(comboBox4);
             Controls.Add(comboBox3);
@@ -317,6 +323,7 @@
             Controls.Add(comboBox1);
             Controls.Add(guna2TextBox1);
             Name = "Form4";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Добавление занятия";
             Load += Form4_Load;
             ResumeLayout(false);
@@ -341,6 +348,6 @@
         public ComboBox comboBox3;
         public ComboBox comboBox4;
         public Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        public ListBox listBox1;
+        public TextBox textBox1;
     }
 }

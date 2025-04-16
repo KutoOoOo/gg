@@ -44,6 +44,12 @@ namespace g
 
         private void guna2CircleButton3_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Введите название группы");
+                return;
+            }
+            else
             DialogResult = DialogResult.OK;
         }
 

@@ -108,7 +108,7 @@
             guna2CircleButton5.ImageAlign = HorizontalAlignment.Right;
             guna2CircleButton5.ImageOffset = new Point(-7, 0);
             guna2CircleButton5.ImageSize = new Size(31, 31);
-            guna2CircleButton5.Location = new Point(141, 138);
+            guna2CircleButton5.Location = new Point(133, 138);
             guna2CircleButton5.Name = "guna2CircleButton5";
             guna2CircleButton5.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CircleButton5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -142,7 +142,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(64, 64, 64);
-            ClientSize = new Size(180, 177);
+            ClientSize = new Size(176, 177);
             ControlBox = false;
             Controls.Add(guna2CircleButton5);
             Controls.Add(guna2CircleButton3);
